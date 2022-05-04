@@ -31,9 +31,7 @@ const getDogPic = async () => {
 
     await writeFilePro('dog-img.txt', res.body.message);
     console.log('Random dog image saved to file');
-  } catch (err) {
-      console.log(err);
-  }
+  } catch (err) {}
 };
 getDogPic();
 
