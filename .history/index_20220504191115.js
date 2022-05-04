@@ -4,7 +4,7 @@ const superagent = require('superagent');
 const readFilePro = (file) => {
   return new Promise((resolve, reject) => {
     fs.readFile(file, (err, data) => {
-      if (err) reject('i could not find that file');
+      if (err.message) reject('i could not find that file');
       resolve(data);
     });
   });
@@ -38,7 +38,7 @@ return writeFilePro('dog-img.txt', res.body.message)
   .then(() => {
       console.log('Random Dog image saved to file!');
   })
-  .catch(err => {
-    console.log(err);
+  .catch((err) => {
+    console.log(err.message);
   });
  

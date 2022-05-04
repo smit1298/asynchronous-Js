@@ -35,10 +35,7 @@ return writeFilePro('dog-img.txt', res.body.message)
     //   console.log('Random dog image saved to file');
     // });
   })
-  .then(() => {
-      console.log('Random Dog image saved to file!');
-  })
-  .catch(err => {
-    console.log(err);
+  .then(() )
+  .catch((err) => {
+    console.log(err.message);
   });
- 

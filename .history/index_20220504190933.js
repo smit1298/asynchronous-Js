@@ -19,6 +19,7 @@ const writeFilePro = (file, data) => {
   });
 };
 
+
 readFilePro(`${__dirname}/dog.txt`)
   .then((data) => {
     console.log(`Breed: ${data}`);
@@ -38,7 +39,6 @@ return writeFilePro('dog-img.txt', res.body.message)
   .then(() => {
       console.log('Random Dog image saved to file!');
   })
-  .catch(err => {
-    console.log(err);
+  .catch((err) => {
+    console.log(err.message);
   });
- 

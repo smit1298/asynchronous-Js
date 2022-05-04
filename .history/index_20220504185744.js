@@ -23,22 +23,16 @@ readFilePro(`${__dirname}/dog.txt`)
   .then((data) => {
     console.log(`Breed: ${data}`);
 
-    return superagent.get(`https://dog.ceo/api/breed/${data}/images/random`);
+    return superagent;
   })
+  .get(`https://dog.ceo/api/breed/${data}/images/random`)
   .then((res) => {
-console.log(res.body.message);
+    console.log(res.body.message);
 
-return writeFilePro('dog-img.txt', res.body.message)
-
-    // fs.writeFile('dog-img.txt', res.body.message, (err) => {
-        // if (err) return console.log(err.message);
-    //   console.log('Random dog image saved to file');
-    // });
+    fs.writeFile('dog-img.txt', res.body.message, (err) => {
+      console.log('Random dog image saved to file');
+    });
   })
-  .then(() => {
-      console.log('Random Dog image saved to file!');
-  })
-  .catch(err => {
-    console.log(err);
+  .catch((err) => {
+    console.log(err.message);
   });
- 

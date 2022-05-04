@@ -31,14 +31,10 @@ console.log(res.body.message);
 return writeFilePro('dog-img.txt', res.body.message)
 
     // fs.writeFile('dog-img.txt', res.body.message, (err) => {
-        // if (err) return console.log(err.message);
+        if 
     //   console.log('Random dog image saved to file');
     // });
   })
-  .then(() => {
-      console.log('Random Dog image saved to file!');
-  })
-  .catch(err => {
-    console.log(err);
+  .catch((err) => {
+    console.log(err.message);
   });
- 
